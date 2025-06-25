@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <label>Enter Text</label>
+    <input type="text" id="txt"></input>
+    <button type="button" id="btn">post </button>
+    </form>
+    <h1 id="hd"></h1>
+    <script>
+        const t=document.querySelector("#txt");
+        const b=document.querySelector("#btn");
+        const h=document.querySelector("#hd");
+        const poststatus=()=>{
+            if(t.value.length==0)
+            {
+              h.innerText="Enter text to post";
+              h.style.color="red";
+              t.style.borderColor="red";
+              return;
+            }
+            h.innerText=t.value;
+            h.style.color="black";
+            t.value="";
+            t.focus();
+        };
+        b.addEventListener("click",poststatus);
+    </script>
+</body>
+</html>
